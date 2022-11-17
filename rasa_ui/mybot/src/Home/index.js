@@ -5,7 +5,7 @@ import SupportEngine from '../SupportEngine'
 
 const Home = () => {
     return(
-        <div>
+        <div style= {{ background: "black"}}>
             {/* <div>dangerouslySetInnerHTML={{ __html: htmlCode}}</div> */}
             <SupportEngine />
          </div>

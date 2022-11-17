@@ -90,7 +90,7 @@ export const styles = {
         height: '100%', 
         width: '100%', 
         textAlign: 'center', 
-        backgroundColor: 'white',
+        backgroundColor: 'black',
     },
     loadingIcon: { 
         color: '#7a39e0', 
@@ -173,7 +173,7 @@ export const styles = {
         height:'400px',
         overflow: 'hidden',
         color: 'white',
-        overflowY: 'scroll',
+        overflow: 'hidden scroll',
         margin: '5px',
         padding: '0 20px 0 0',
         
@@ -193,16 +193,21 @@ export const styles = {
         borderTopRightRadius: '10px',
         borderTopLeftRadius: '10px',
         borderBottomLeftRadius: '10px',
+        //whiteSpace:'pre',
         // borderBottomRightRadius:
       },
       botMessage: {
         textAlign: 'left',
         backgroundColor: '#7a39e0',
         padding: '15px',
+        marginTop: '2px',
+        marginLeft: '10px',
         borderTopRightRadius: '10px',
         borderTopLeftRadius: '10px',
         // borderBottomLeftRadius: '10px',
         borderBottomRightRadius: '10px',
+        whiteSpace:'pre-wrap',
       },
+
       
 }

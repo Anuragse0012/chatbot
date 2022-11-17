@@ -23,7 +23,7 @@ const SupportEngine = () => {
     }, [ref])
 
     return (
-        <div ref={ref} >
+        <div ref={ref}>
             <SupportWindow 
                 visible={visible}
             />
