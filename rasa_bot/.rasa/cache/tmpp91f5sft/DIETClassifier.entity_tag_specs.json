@@ -1,0 +1,52 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-age",
+      "2": "I-age",
+      "3": "L-age",
+      "4": "U-age",
+      "5": "B-current_situation",
+      "6": "I-current_situation",
+      "7": "L-current_situation",
+      "8": "U-current_situation",
+      "9": "B-medical_issue",
+      "10": "I-medical_issue",
+      "11": "L-medical_issue",
+      "12": "U-medical_issue",
+      "13": "B-name",
+      "14": "I-name",
+      "15": "L-name",
+      "16": "U-name",
+      "17": "B-timing",
+      "18": "I-timing",
+      "19": "L-timing",
+      "20": "U-timing",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-age": 1,
+      "I-age": 2,
+      "L-age": 3,
+      "U-age": 4,
+      "B-current_situation": 5,
+      "I-current_situation": 6,
+      "L-current_situation": 7,
+      "U-current_situation": 8,
+      "B-medical_issue": 9,
+      "I-medical_issue": 10,
+      "L-medical_issue": 11,
+      "U-medical_issue": 12,
+      "B-name": 13,
+      "I-name": 14,
+      "L-name": 15,
+      "U-name": 16,
+      "B-timing": 17,
+      "I-timing": 18,
+      "L-timing": 19,
+      "U-timing": 20,
+      "O": 0
+    },
+    "num_tags": 21
+  }
+]

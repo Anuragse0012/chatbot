@@ -1,0 +1,159 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremely sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: affirm
+  examples: |
+    - yes
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - sure
+    - ok
+    - okay
+    - ok great
+    - fine
+    - yes I did
+
+- intent: ask_name
+  examples: |
+    - [anurag](name)
+    - [Lisa](name)
+    - My name is [Josh](name)
+    - I am [Josh](name)
+    - I am [Rohit](name)
+    - My name is [Rohit](name)
+
+- intent: ask_age
+  examples: |
+    - [56](age)
+    - [67](age)
+    - [70](age)
+    - [75](age)
+
+- intent: ask_medical_issue
+  examples: |
+    - [diabetes](medical_issue)
+    - [kidney](medical_issue)
+    - [cancer](medical_issue)
+
+- intent: ask_current_situation
+  examples: |
+    - [bedridden](current_situation)
+    - [wheelchair](current_situation)
+
+- intent: ask_timing
+  examples: |
+    - [24*7](timing)
+    - [5 days a week](timing)
+    - [24 hour](timing)
+
+- intent: ask_amount
+  examples: |
+    - [1k](amount)
+    - [2k](amount)
+    - [3k](amount)
+    - [100k](amount)
+    - [200k](amount)
+    - [500k](amount)
+    - [600k](amount)
+    - [700k](amount)
+    - [10000k](amount)
+
+- intent: ask_nurse
+  examples: |
+    - [nurse1](nurse)
+    - [nurse2](nurse)
+    - [nurse3](nurse)
+    - [nurse4](nurse)
+    - [nurse5](nurse)
+    - [nurse6](nurse)
+    - [Nurse 1](nurse)
+    - [Nurse 2](nurse)
+    - [Nurse 3](nurse)
+
+- intent: ask_confirmation
+  examples: |
+    - [confirm](confirmation)
+    - [reject](confirmation)
+

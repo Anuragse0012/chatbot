@@ -1,0 +1,177 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - ask_name
+  - ask_age
+  - ask_medical_issue
+  - ask_current_situation
+  - ask_timing
+  - ask_amount
+  - ask_nurse
+  - ask_confirmation
+
+entities:
+  - name
+  - age
+  - medical_issue
+  - current_situation
+  - timing
+  - amount
+  - nurse
+  - confirmation
+
+responses:
+  utter_greet:
+  - text: "Hello, Welcome to Nurse management system. Would you like to provide few details?."
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_ask_name:
+    - text: "What is your name?"
+
+  utter_ask_age:
+    - text: "What is your age?"
+
+  utter_ask_medical_issue:
+    - text: "What is your medical issue?"
+      #buttons:
+       # - title: "cancer"
+        #  payload: '/medical_issue{"medical_issue":"cancer"}'
+       # - title: "diabetes"
+       #   payload: '/medical_issue{"medical_issue":"diabetes"}'
+       # - title: "kidney"
+       #   payload: '/medical_issue{"medical_issue":"kidney"}'
+
+  utter_ask_current_situation:
+    - text: "What is your current situation?"
+      #buttons:
+      #  - title: "bedridden"
+      #    payload: '/current_situation{"current_situation":"bedridden"}'
+      #  - title: "wheelchair"
+      #    payload: '/current_situation{"current_situation":"wheelchair"}'
+
+  utter_ask_timing:
+    - text: "What time-frame you need the nurse?"
+     # buttons:
+     #   - title: "24*7"
+     #     payload: '/timing{"timing":"24*7"}'
+     #   - title: "5 days a week"
+     #     payload: '/timing{"timing":"5 days a week"}'
+     #   - title: "24 hour"
+     #     payload: '/timing{"timing":"24 hour"}'
+
+  utter_ask_amount:
+    - text: "What package (in $) would you like to choose?"
+    #  buttons:
+    #    - title: "100k"
+    #      payload: '/amount{"amount":"100k"}'
+    #    - title: "200k"
+    #      payload: '/amount{"amount":"200k"}'
+    #    - title: "500k"
+    #      payload: '/amount{"amount":"500k"}'
+
+  utter_ask_nurse:
+    - text: "You've submitted the following details:\n
+              - Name: {name}\n
+              - Age: {age}\n
+              - Medical Issue: {medical_issue}\n
+              - Current Situation: {current_situation}\n
+              - Timing: {timing}\n
+              - Amount: ${amount}\n
+              - Selected Nurse: {nurse}"
+
+  utter_slots_values:
+    - text: "You've submitted the following details:\n
+              - Name: {name}\n
+              - Age: {age}\n
+              - Medical Issue: {medical_issue}\n
+              - Current Situation: {current_situation}\n
+              - Timing: {timing}\n
+              - Amount: ${amount}"
+
+slots:
+  name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: name
+  age:
+    type: any
+    mappings:
+      - type: from_entity
+        entity: age
+  medical_issue:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: medical_issue
+  current_situation:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: current_situation
+  timing:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: timing
+  amount:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: amount
+  nurse:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: nurse
+  confirmation:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: confirmation
+
+actions:
+  - action_appointment
+  - action_confirmation
+
+forms:
+  nurse_appointment_form:
+    ignored_intents:
+      - goodbye
+      - deny
+      - mood_great
+      - mood_unhappy
+      - bot_challenge
+    required_slots:
+      - name
+      - age
+      - medical_issue
+      - current_situation
+      - timing
+      - amount
+
+session_config:
+  session_expiration_time: 300
+  carry_over_slots_to_new_session: true

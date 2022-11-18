@@ -1,0 +1,8 @@
+{
+  "rule_only_slots": [
+    "nurse"
+  ],
+  "rule_only_loops": [
+    "nurse_appointment_form"
+  ]
+}

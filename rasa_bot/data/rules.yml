@@ -1,0 +1,42 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Say ask_confirmation anytime the user says confirm
+  steps:
+  - intent: ask_confirmation
+  - action: action_confirmation
+  - action: action_restart
+
+- rule: Say ask_confirmation anytime the user says reject
+  steps:
+  - intent: ask_confirmation
+  - action: action_confirmation
+  - action: action_restart
+
+- rule: Activate form
+  steps:
+  - intent: affirm
+  - action: nurse_appointment_form
+  - active_loop: nurse_appointment_form
+
+- rule: Submit form
+  condition:
+  - active_loop: nurse_appointment_form
+  steps:
+  - action: nurse_appointment_form
+  - active_loop: null
+  - action: action_appointment
+  - intent: ask_nurse
+  - action: utter_ask_nurse
+  - action: action_restart

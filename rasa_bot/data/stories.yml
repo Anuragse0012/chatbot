@@ -1,0 +1,67 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  #- intent: affirm
+  #- action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: nurse appointment
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: affirm
+  - action: nurse_appointment_form
+  - active_loop: nurse_appointment_form
+  - slot_was_set:
+      - requested_slot: name
+  - slot_was_set:
+      - name: vincent
+  - slot_was_set:
+      - requested_slot: age
+  - slot_was_set:
+      - age: 67
+  - slot_was_set:
+      - requested_slot: medical_issue
+  - slot_was_set:
+      - medical_issue: cancer
+  - slot_was_set:
+      - requested_slot: current_situation
+  - slot_was_set:
+      - current_situation: bedridden
+  - slot_was_set:
+      - requested_slot: timing
+  - slot_was_set:
+      - timing: 24*7
+  - slot_was_set:
+      - requested_slot: amount
+  - slot_was_set:
+      - amount: 200k
+  - active_loop: null
+  - action: action_appointment
+  - intent: ask_nurse
+  - action: utter_ask_nurse
+  - action: action_restart
